@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <node pkg="robot_localization" type="ekf_localization_node" name="ekf_se" clear_params="true">
+    <rosparam command="load" file="$(find husky_highlevel_controller)/config/localization.yaml"/>
+  </node>
+
+
+  <include file="$(find husky_control)/launch/control.launch"/>
+
+
+<!-- 在rviz中显示-->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find husky_highlevel_controller)/config/exercise4.rviz" required="true" />
+
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="rob_st_pub"/>
+	
+
+
+</launch>

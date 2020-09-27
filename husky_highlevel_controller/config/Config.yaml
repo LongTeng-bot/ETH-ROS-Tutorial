@@ -1,0 +1,4 @@
+topic_name: scan
+queue_size: 1
+rotation_gain: 0.3
+distance_gain: 0.5
